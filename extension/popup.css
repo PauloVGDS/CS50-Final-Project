@@ -1,0 +1,81 @@
+:root[data-theme="light"] {
+  --text: #1e1c06;
+  --background: #ffffff;
+  --primary: #8ab6f0;
+  --secondary: #0f3b75;
+  --accent: #28b8c8;
+}
+:root[data-theme="dark"] {
+  --text: #f9f7e1;
+  --background: #000000;
+  --primary: #e9af1e;
+  --secondary: #e9af1e;
+  --accent: #37c7d7;
+}
+
+* {
+  transition: all 0.15s ease-in;
+}
+
+
+html {
+  margin: 5px;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+p {
+  margin: 0;
+}
+
+#searchContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  gap: 2.5vw;
+}
+
+#searchContainer input, button {
+  border: none;
+  border-bottom: 2px solid var(--primary);
+  background-color: transparent;
+  color: var(--text);
+  outline: none;
+  height: 2em;
+}
+
+#searchContainer input:hover {
+  border-bottom: 2px solid var(--accent);
+}
+
+input::placeholder {
+  color: var(--text);
+}
+
+button:hover {
+  border-bottom: 2px solid var(--accent);
+} button span:hover {
+  transform: scale(1.13);
+}
+
+button:active {
+  transform: scale(0.90);
+}
+
+#infoContainer h2{
+  color: var(--secondary);
+  font-weight: bolder;
+  
+}
