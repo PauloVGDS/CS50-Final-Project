@@ -14,13 +14,15 @@
 }
 
 * {
-  transition: all 0.15s ease-in;
+  transition: all 0.10s ease-in;
 }
 
 
 html {
   margin: 5px;
   padding: 0;
+  height: 60vh;
+  width: 40vw;
   font-family: 'Inter', sans-serif;
   font-family: 'Titillium Web', sans-serif;
   scroll-behavior: smooth;
