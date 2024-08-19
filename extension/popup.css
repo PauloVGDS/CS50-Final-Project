@@ -21,8 +21,6 @@
 html {
   margin: 5px;
   padding: 0;
-  height: 60vh;
-  width: 40vw;
   font-family: 'Inter', sans-serif;
   font-family: 'Titillium Web', sans-serif;
   scroll-behavior: smooth;
@@ -40,6 +38,7 @@ header {
 
 p {
   margin: 0;
+  font-weight: 700;
 }
 
 #searchContainer {

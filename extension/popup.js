@@ -6,7 +6,7 @@ async function infoAPI() {
 
   try {
 
-    data =  await fetch(`https://mwd7djze7zqlfuler6f5ajgafa0otkkr.lambda-url.sa-east-1.on.aws/?code=${code}`,
+    data =  await fetch(`https://dt5lxpq0ka.execute-api.sa-east-1.amazonaws.com/default/SearchPackageFunction?code=${code}`,
     {
       mode:"cors",
       method: "GET",
