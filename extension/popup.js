@@ -8,6 +8,7 @@ async function infoAPI() {
 
     data =  await fetch(`https://dt5lxpq0ka.execute-api.sa-east-1.amazonaws.com/default/SearchPackageFunction?code=${code}`,
     {
+      //AK295696465BR
       mode:"cors",
       method: "GET",
       headers: {
@@ -29,35 +30,39 @@ async function infoAPI() {
       return a + b
       });
 
-      // Fechamento da nav e começo da div
-      template += `
-      <div>`
+          //subStatus":["Origem: Unidade de Tratamento - CONTAGEM/MG",
+          //"Destino: Unidade de Distribuição - UBERLANDIA/MG"]
+
+
       // Loop para colocar as informações de cada evento dentro da div 
       for (let i = 0; i < data["eventos"].length; i++) {
         template += `
-            <h2 id="${data.eventos[i].status}">${data.eventos[i].status}</h2>
-  
-            <p>${data.eventos[i].subStatus}<br>Data: ${data.eventos[i].data} Hora: ${data.eventos[i].hora}</p>
-            <hr>
+        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">${data.eventos[i].status}</h5>
+        </div>
+        <p class="mb-1">${data.eventos[i].subStatus[0]}</p>
+        <small>${data.eventos[i].subStatus[1] != undefined ? data.eventos[i].subStatus[1] : ""}</small>
+        <small>${data.eventos[i].data} ${data.eventos[i].hora}</small>
+      </a>
         `
       }
-      template += `</div>`
       // String html pronta, inserindo no documento.
       return container.innerHTML = template;
     }
 }
 
 function switchTheme() {
-
-let att = document.documentElement
-let btn = document.querySelector("#themeBtn")
-
-if (att.getAttribute("data-theme") == "light") {
-  btn.innerHTML = "<span class='material-symbols-outlined'>light_mode</span>"  
-  att.setAttribute("data-theme", "dark")
-} else {
-  btn.innerHTML = "<span class='material-symbols-outlined'>dark_mode</span>"  
-  att.setAttribute("data-theme", "light")
+  let att = document.documentElement
+  let btn = document.querySelector("#themeBtn")
+  
+  // For some reason if only the textContent be changed the icon dont appears correctly
+  if (att.getAttribute("data-theme") == "light") {
+    btn.innerHTML = "<span class='material-symbols-outlined'>light_mode</span>"  
+    att.setAttribute("data-theme", "dark")
+  } else {
+    btn.innerHTML = "<span class='material-symbols-outlined'>dark_mode</span>"  
+    att.setAttribute("data-theme", "light")
 }
 
 
@@ -74,5 +79,6 @@ searchBtn.addEventListener("click", infoAPI)
 
 let switchBtn = document.querySelector("#themeBtn")
 switchBtn.addEventListener("click" ,switchTheme)
+
 
 
