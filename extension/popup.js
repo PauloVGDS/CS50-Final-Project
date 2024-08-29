@@ -33,11 +33,11 @@ async function infoAPI() {
           //subStatus":["Origem: Unidade de Tratamento - CONTAGEM/MG",
           //"Destino: Unidade de Distribuição - UBERLANDIA/MG"]
 
-
+      
       // Loop para colocar as informações de cada evento dentro da div 
       for (let i = 0; i < data["eventos"].length; i++) {
         template += `
-        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+        <a href="#" id="packageEvent" class="list-group-item list-group-item-action" aria-current="true">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">${data.eventos[i].status}</h5>
         </div>
