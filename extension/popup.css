@@ -18,8 +18,9 @@
 
 :root {
   min-width: 300px;
-  min-height: fit-content
+  min-height: fit-content;  
 }
+
 
 /* Transicion effect */
 * {
