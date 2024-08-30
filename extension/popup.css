@@ -16,6 +16,11 @@
   --accent: #37c7d7;
 }
 
+:root {
+  min-width: 300px;
+  min-height: fit-content
+}
+
 /* Transicion effect */
 * {
   transition: all 0.1s ease-in-out;
