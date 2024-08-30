@@ -22,22 +22,19 @@ async function infoAPI() {
     console.log(`Erro: ${error}`);
   }
   finally {
-      // Ordenação dos elementos da array por ordem de chegada
-      template = ""
-      data.eventos.sort((a, b) => {
-      a = parseDataHora(a.data, a.hora)   
-      b = parseDataHora(b.data, b.hora) 
-      return a + b
-      });
+    // Ordenação dos elementos da array por ordem de chegada
+    template = ""
+    data.eventos.sort((a, b) => {
+    a = parseDataHora(a.data, a.hora)   
+    b = parseDataHora(b.data, b.hora) 
+    return a + b
+    });
 
-          //subStatus":["Origem: Unidade de Tratamento - CONTAGEM/MG",
-          //"Destino: Unidade de Distribuição - UBERLANDIA/MG"]
 
-      
-      // Loop para colocar as informações de cada evento dentro da div 
-      for (let i = 0; i < data["eventos"].length; i++) {
-        template += `
-        <a href="#" id="packageEvent" class="list-group-item list-group-item-action" aria-current="true">
+    // Loop para colocar as informações de cada evento dentro da div 
+    for (let i = 0; i < data["eventos"].length; i++) {
+      template += `
+      <a href="#" id="packageEvent" class="list-group-item list-group-item-action" aria-current="true">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">${data.eventos[i].status}</h5>
         </div>
@@ -45,11 +42,11 @@ async function infoAPI() {
         <small>${data.eventos[i].subStatus[1] != undefined ? data.eventos[i].subStatus[1] : ""}</small>
         <small>${data.eventos[i].data} ${data.eventos[i].hora}</small>
       </a>
-        `
-      }
-      // String html pronta, inserindo no documento.
-      return container.innerHTML = template;
+      `
     }
+    // String html pronta, inserindo no documento.
+    return container.innerHTML = template;
+  }
 }
 
 function switchTheme() {
@@ -63,9 +60,7 @@ function switchTheme() {
   } else {
     btn.innerHTML = "<span class='material-symbols-outlined'>dark_mode</span>"  
     att.setAttribute("data-theme", "light")
-}
-
-
+  }
 }
 
 function parseDataHora(data, hora) {
@@ -79,6 +74,3 @@ searchBtn.addEventListener("click", infoAPI)
 
 let switchBtn = document.querySelector("#themeBtn")
 switchBtn.addEventListener("click" ,switchTheme)
-
-
-

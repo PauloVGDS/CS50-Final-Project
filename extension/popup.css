@@ -1,56 +1,71 @@
+
+/* White theme */
 :root[data-theme="light"] {
   --text: #1e1c06;
   --background: #ffffff;
-  --primary: #8ab6f0;
-  --secondary: #0f3b75;
+  --primary: #0f3b75;
+  --secondary: #8ab6f0;
   --accent: #28b8c8;
 }
+/* Black theme */
 :root[data-theme="dark"] {
   --text: #f9f7e1;
   --background: #000000;
-  --primary: #e9af1e;
+  --primary: #fbde05;
   --secondary: #e9af1e;
   --accent: #37c7d7;
 }
 
+/* Transicion effect */
 * {
   transition: all 0.1s ease-in-out;
 }
 
+/* Background color */
 body, nav, a {
   background: var(--background);
   color: var(--text);
 }
 
+/* Input field color */
 #inputCode {
-  border-color: var(--secondary);
+  border-color: var(--primary);
   background-color: var(--background);
   color: var(--text);
 }
 
+/* Buttons color  */
 #textContainer, #inputBtn, #themeBtn {
-  color: var(--secondary);
-  border-color: var(--secondary);
+  color: var(--primary);
+  background-color: var(--background);
+  border-color: var(--primary);
 }
 
+/* Hover effect on buttons */
 #inputBtn:hover, #themeBtn:hover {
   color: var(--accent);
   background-color: var(--secondary);
 }
 
+
+/* Events background color*/
 #packageEvent {
   color: var(--text);
   background-color: var(--background);
-  border-color: var(--secondary);
+  border-color: var(--primary);
 }
 
+/* Accent text on events */
 #packageEvent h5 {
-  color: var(--secondary);
+  color: var(--primary);
 }
+
+/* Brand text color */
 #textBrand {
   color: var(--text);
 }
 
+/* Footer icons color */
 #footerList {
   fill: var(--text);
 }
