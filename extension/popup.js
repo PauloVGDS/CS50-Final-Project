@@ -61,25 +61,40 @@ async function infoAPI() {
   }
 }
 
-function switchTheme() {
-  let att = document.documentElement
-  let btn = document.querySelector("#themeBtn")
-  
-  // For some reason if only the textContent be changed the icon dont appears correctly
-  if (att.getAttribute("data-theme") == "light") {
-    btn.innerHTML = "<span class='material-symbols-outlined'>light_mode</span>"  
-    att.setAttribute("data-theme", "dark")
-  } else {
-    btn.innerHTML = "<span class='material-symbols-outlined'>dark_mode</span>"  
-    att.setAttribute("data-theme", "light")
-  }
-}
-
 function parseDataHora(data, hora) {
   const [dia, mes, ano] = data.split('/');
   const [horas, minutos, segundos] = hora.split(':');
   return new Date(ano, mes - 1, dia, horas, minutos, segundos);
-};
+}
+
+function switchTheme() {
+  // Seleção do corpo e botão
+  let body = document.body;
+  let themeBtn = document.querySelector("#themeBtn span");
+  // Define o thema do corpo e icone do botão de acordo com o cookie
+  body.dataset.theme = localStorage.getItem("theme") == "light" ? "dark" : "light";
+  themeBtn.textContent = localStorage.getItem("theme") == "light" ? "light_mode" : "dark_mode";
+  localStorage.setItem("theme", body.dataset.theme);
+  
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleção do corpo e botão
+  let body = document.body;
+  let themeBtn = document.querySelector("#themeBtn span");
+  
+
+  // Condição para criar os cookies
+  if (localStorage.getItem("theme") != null){
+    body.dataset.theme = localStorage.getItem("theme");
+  } else {
+    localStorage.setItem("theme", "light");
+    body.dataset.theme = localStorage.getItem("theme");
+  }
+  // Define o icone do botão de tema de acordo com o cookie
+  themeBtn.textContent = localStorage.getItem("theme") == "light" ? "dark_mode" : "light_mode";
+});
 
 let searchBtn = document.querySelector("#inputBtn")
 searchBtn.addEventListener("click", infoAPI)

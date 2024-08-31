@@ -1,6 +1,6 @@
 
 /* White theme */
-:root[data-theme="light"] {
+html [data-theme="light"] {
   --text: #1e1c06;
   --background: #ffffff;
   --primary: #0f3b75;
@@ -8,7 +8,7 @@
   --accent: #28b8c8;
 }
 /* Black theme */
-:root[data-theme="dark"] {
+html [data-theme="dark"] {
   --text: #f9f7e1;
   --background: #000000;
   --primary: #fbde05;
@@ -62,6 +62,7 @@ body, nav, a {
   border-color: var(--primary);
 }
 
+/* Accent text on events */
 #packageEvent h5{
   color: var(--primary);
 }
