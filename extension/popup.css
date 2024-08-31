@@ -55,23 +55,13 @@ body, nav, a {
 
 
 /* Events background color*/
-#packageEvent {
+#packageEvent, #packageEventPlaceholder {
   color: var(--text);
+  fill: var(--text);
   background-color: var(--background);
   border-color: var(--primary);
 }
 
-/* Accent text on events */
-#packageEvent h5 {
+#packageEvent h5{
   color: var(--primary);
-}
-
-/* Brand text color */
-#textBrand {
-  color: var(--text);
-}
-
-/* Footer icons color */
-#footerList {
-  fill: var(--text);
 }
