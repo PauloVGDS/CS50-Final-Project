@@ -1,13 +1,11 @@
 {
     "manifest_version": 3,    
     "name": "Tracking Extension",
-    "version": "3.0",
+    "version": "4.0",
     "description": "Track packages on a easy way",
     "action": {
       "default_icon": "favicon.png",
       "default_popup": "popup.html"
-    },
-    "default_popup_width": 400,
-    "default_popup_height": 300
+    }
   }
   
