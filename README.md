@@ -1,5 +1,7 @@
-# Tracking Extension
+# Fast Track
 #### Video Demo:  https://youtu.be/2_quJmquLOg
+![image](https://github.com/user-attachments/assets/1b852bdd-413f-4d4a-bc78-4f18e9031bf1)
+
 #### Description:
 
 ### The "Parcel Tracker" extension allows tracking of national parcels through integration with the API https://api.linketrack.com/track/json, presenting a friendly interface
@@ -20,3 +22,5 @@ The popup.js file contains the functions that make the request to the API, assem
 ## CORS and AWS:
 Using the original Correios API I had the CORS (Cross-Origin Resource Share) problem and the solution I found was to use a Proxy API. And for that I used two AWS services, API Gateway and AWS Lambda. API Gateway was used as a trigger for the function, which made an HTTP request to the original API and returned the JSON with the order information.
 
+# Interface
+![image](https://github.com/user-attachments/assets/eee858a8-c78f-4d15-9eff-8a211a01b45e)
